@@ -1,0 +1,49 @@
+body
+  background-color: $blue
+  font-family: 'Open Sans', sans-serf
+  .mid
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    height: 100vh
+    padding: 5em
+    box-sizing: border-box
+    text-align: center
+    h1.facebook
+      font-size: 7em
+      font-family: "klavika", sans-serif
+      color: white
+    form
+      padding-bottom: 20vh
+      input
+        display: block
+        width: 600px
+        margin: 0 auto
+        padding: 1em
+        box-sizing: border-box
+        border: none
+        &:focus
+          outline: none
+      input[type="email"]
+        border-radius: 5px 5px 0px 0px
+      input[type="password"]
+        border-radius: 0px 0px 5px 5px
+        border-top: 1px solid rgba(0,0,0,0.2)
+      input[type="submit"]
+        border-radius: 5px
+        margin-top: 10px
+        background-color: $dark-blue
+        color: #fff
+        font-family: 'Open Sans', sans-serif
+        font-weight: 400
+        transition: all 150ms ease-in-out
+        &:hover
+          background-color: #fff
+          color: $blue
+    .bottom
+      font-family: 'Open Sans', sans-serif
+      font-weight: 100
+      font-size: 0.9em
+      color: #fff
+      text-decoration: none
+

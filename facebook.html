@@ -1,0 +1,32 @@
+<head>
+  <title>facebook</title>
+</head>
+
+<body>
+  <div class="mid">
+    <h1 class="facebook">facebook</h1>
+    {{> login }}
+  </div>
+</body>
+
+
+<!--#############################################################-->
+
+<template name="register">
+  <form>
+    <input type="email" name="registerEmail" placeholder="Email">
+    <input type="password" name="registerPassword" placeholder="Password">
+    <input type="submit" value="Register">
+  </form>
+  <a class="bottom" href="#">Have an account?</a>
+</template>
+
+
+<template name="login">
+  <form>
+    <input type="email" name="loginEmail" placeholder="Email">
+    <input type="password" name="loginPassword" placeholder="Password">
+    <input type="submit" value="Login">
+  </form>
+  <a class="bottom" href="#">New here?</a>
+</template>
