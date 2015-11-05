@@ -1,6 +1,7 @@
 body
   background-color: $blue
   font-family: 'Open Sans', sans-serf
+  overflow: hidden
   .mid
     width: 100%
     max-width: 1200px
@@ -13,37 +14,85 @@ body
       font-size: 7em
       font-family: "klavika", sans-serif
       color: white
-    form
-      padding-bottom: 20vh
-      input
-        display: block
-        width: 600px
-        margin: 0 auto
-        padding: 1em
-        box-sizing: border-box
-        border: none
-        &:focus
-          outline: none
-      input[type="email"]
-        border-radius: 5px 5px 0px 0px
-      input[type="password"]
-        border-radius: 0px 0px 5px 5px
-        border-top: 1px solid rgba(0,0,0,0.2)
-      input[type="submit"]
-        border-radius: 5px
-        margin-top: 10px
-        background-color: $dark-blue
-        color: #fff
-        font-family: 'Open Sans', sans-serif
-        font-weight: 400
-        transition: all 150ms ease-in-out
-        &:hover
-          background-color: #fff
-          color: $blue
-    .bottom
+    .welcome, .logout
       font-family: 'Open Sans', sans-serif
       font-weight: 100
       font-size: 0.9em
       color: #fff
+      margin: 2em
       text-decoration: none
-
+    .logout
+      color: $dark-blue
+    .inactive
+      transform: translate(-100%, 0px)
+      pointer-events: none
+      opacity: 0
+    .inactive2
+      transform: translate(100%, 0px)
+      pointer-events: none
+      opacity: 0
+    .active
+      transform: translate(0px,0px)
+      pointer-events: all
+      opacity: 1
+    .login, .register
+      width: 100%
+      position: absolute
+      left: 0
+      transition: all 300ms ease-in-out
+      form
+        margin: 0 auto
+        padding-bottom: 20vh
+        width: 100%
+        max-width: 600px
+        input
+          display: block
+          width: 100%
+          margin: 0 auto
+          padding: 1em
+          box-sizing: border-box
+          border: none
+          &:focus
+            outline: none
+        input[type="email"]
+          border-radius: 5px 5px 0px 0px
+        input[type="password"].confirm-pass
+          border-radius: 0px 0px 0px 0px
+          border-top: 1px solid rgba(0,0,0,0.2)
+        input[type="password"]
+          border-radius: 0px 0px 5px 5px
+          border-top: 1px solid rgba(0,0,0,0.2)
+        input[type="submit"]
+          border-radius: 5px
+          margin-top: 10px
+          background-color: $dark-blue
+          color: #fff
+          font-family: 'Open Sans', sans-serif
+          font-weight: 400
+          transition: all 150ms ease-in-out
+          &:hover
+            background-color: #fff
+            color: $blue
+      .bottom
+        a
+          font-family: 'Open Sans', sans-serif
+          font-weight: 100
+          font-size: 0.9em
+          color: #fff
+          text-decoration: none
+@media (max-width: 600px)
+  body
+    .mid
+      padding: 2.5em
+      h1.facebook
+        font-size: 5em
+@media (max-height: 750px)
+  body
+    .mid
+      h1.facebook
+        margin: 0
+      .login, .register
+        form
+          box-sizing: border-box
+          padding-bottom: 10vh
+          margin: 3em

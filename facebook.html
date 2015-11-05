@@ -5,7 +5,14 @@
 <body>
   <div class="mid">
     <h1 class="facebook">facebook</h1>
-    {{> login }}
+
+    {{#if currentUser}}
+      {{> dashboard}}
+    {{else}}
+      {{> login}}
+      {{> register}}
+    {{/if}}
+
   </div>
 </body>
 
@@ -13,20 +20,34 @@
 <!--#############################################################-->
 
 <template name="register">
-  <form>
-    <input type="email" name="registerEmail" placeholder="Email">
-    <input type="password" name="registerPassword" placeholder="Password">
-    <input type="submit" value="Register">
-  </form>
-  <a class="bottom" href="#">Have an account?</a>
+  <div class="register inactive">
+    <form>
+      <input type="email" name="registerEmail" placeholder="Email">
+      <input type="password" name="registerPassword" placeholder="Password" class="confirm-pass">
+      <input type="password" name="registerPassword2" placeholder="Confirm Password">
+      <input type="submit" value="Register">
+    </form>
+    <div class="bottom">
+      <a href="#" class="login-toggle">Have an account?</a>
+    </div>
+  </div>
 </template>
 
 
 <template name="login">
-  <form>
-    <input type="email" name="loginEmail" placeholder="Email">
-    <input type="password" name="loginPassword" placeholder="Password">
-    <input type="submit" value="Login">
-  </form>
-  <a class="bottom" href="#">New here?</a>
+  <div class="login active">
+    <form>
+      <input type="email" name="loginEmail" placeholder="Email">
+      <input type="password" name="loginPassword" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+    <div class="bottom">
+      <a href="#" class="register-toggle">New here?</a>
+    </div>
+  </div>
+</template>
+
+<template name="dashboard">
+  <p class="welcome">Welcome {{email}}</p>
+  <a href="#" class="logout">Logout</a>
 </template>

@@ -406,8 +406,9 @@ th {
 /* line 1, C:/dev/facebook/css/_style.sass */
 body {
   background-color: #415f9d;
-  font-family: 'Open Sans', sans-serf; }
-  /* line 4, C:/dev/facebook/css/_style.sass */
+  font-family: 'Open Sans', sans-serf;
+  overflow: hidden; }
+  /* line 5, C:/dev/facebook/css/_style.sass */
   body .mid {
     width: 100%;
     max-width: 1200px;
@@ -416,51 +417,108 @@ body {
     padding: 5em;
     box-sizing: border-box;
     text-align: center; }
-    /* line 12, C:/dev/facebook/css/_style.sass */
+    /* line 13, C:/dev/facebook/css/_style.sass */
     body .mid h1.facebook {
       font-size: 7em;
       font-family: "klavika", sans-serif;
       color: white; }
-    /* line 16, C:/dev/facebook/css/_style.sass */
-    body .mid form {
-      padding-bottom: 20vh; }
-      /* line 18, C:/dev/facebook/css/_style.sass */
-      body .mid form input {
-        display: block;
-        width: 600px;
-        margin: 0 auto;
-        padding: 1em;
-        box-sizing: border-box;
-        border: none; }
-        /* line 25, C:/dev/facebook/css/_style.sass */
-        body .mid form input:focus {
-          outline: none; }
-      /* line 27, C:/dev/facebook/css/_style.sass */
-      body .mid form input[type="email"] {
-        border-radius: 5px 5px 0px 0px; }
-      /* line 29, C:/dev/facebook/css/_style.sass */
-      body .mid form input[type="password"] {
-        border-radius: 0px 0px 5px 5px;
-        border-top: 1px solid rgba(0, 0, 0, 0.2); }
-      /* line 32, C:/dev/facebook/css/_style.sass */
-      body .mid form input[type="submit"] {
-        border-radius: 5px;
-        margin-top: 10px;
-        background-color: #1d3058;
-        color: #fff;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400;
-        transition: all 150ms ease-in-out; }
-        /* line 40, C:/dev/facebook/css/_style.sass */
-        body .mid form input[type="submit"]:hover {
-          background-color: #fff;
-          color: #415f9d; }
-    /* line 43, C:/dev/facebook/css/_style.sass */
-    body .mid .bottom {
+    /* line 17, C:/dev/facebook/css/_style.sass */
+    body .mid .welcome, body .mid .logout {
       font-family: 'Open Sans', sans-serif;
       font-weight: 100;
       font-size: 0.9em;
       color: #fff;
+      margin: 2em;
       text-decoration: none; }
+    /* line 24, C:/dev/facebook/css/_style.sass */
+    body .mid .logout {
+      color: #1d3058; }
+    /* line 26, C:/dev/facebook/css/_style.sass */
+    body .mid .inactive {
+      transform: translate(-100%, 0px);
+      pointer-events: none;
+      opacity: 0; }
+    /* line 30, C:/dev/facebook/css/_style.sass */
+    body .mid .inactive2 {
+      transform: translate(100%, 0px);
+      pointer-events: none;
+      opacity: 0; }
+    /* line 34, C:/dev/facebook/css/_style.sass */
+    body .mid .active {
+      transform: translate(0px, 0px);
+      pointer-events: all;
+      opacity: 1; }
+    /* line 38, C:/dev/facebook/css/_style.sass */
+    body .mid .login, body .mid .register {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      transition: all 300ms ease-in-out; }
+      /* line 43, C:/dev/facebook/css/_style.sass */
+      body .mid .login form, body .mid .register form {
+        margin: 0 auto;
+        padding-bottom: 20vh;
+        width: 100%;
+        max-width: 600px; }
+        /* line 48, C:/dev/facebook/css/_style.sass */
+        body .mid .login form input, body .mid .register form input {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          padding: 1em;
+          box-sizing: border-box;
+          border: none; }
+          /* line 55, C:/dev/facebook/css/_style.sass */
+          body .mid .login form input:focus, body .mid .register form input:focus {
+            outline: none; }
+        /* line 57, C:/dev/facebook/css/_style.sass */
+        body .mid .login form input[type="email"], body .mid .register form input[type="email"] {
+          border-radius: 5px 5px 0px 0px; }
+        /* line 59, C:/dev/facebook/css/_style.sass */
+        body .mid .login form input[type="password"].confirm-pass, body .mid .register form input[type="password"].confirm-pass {
+          border-radius: 0px 0px 0px 0px;
+          border-top: 1px solid rgba(0, 0, 0, 0.2); }
+        /* line 62, C:/dev/facebook/css/_style.sass */
+        body .mid .login form input[type="password"], body .mid .register form input[type="password"] {
+          border-radius: 0px 0px 5px 5px;
+          border-top: 1px solid rgba(0, 0, 0, 0.2); }
+        /* line 65, C:/dev/facebook/css/_style.sass */
+        body .mid .login form input[type="submit"], body .mid .register form input[type="submit"] {
+          border-radius: 5px;
+          margin-top: 10px;
+          background-color: #1d3058;
+          color: #fff;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 400;
+          transition: all 150ms ease-in-out; }
+          /* line 73, C:/dev/facebook/css/_style.sass */
+          body .mid .login form input[type="submit"]:hover, body .mid .register form input[type="submit"]:hover {
+            background-color: #fff;
+            color: #415f9d; }
+      /* line 77, C:/dev/facebook/css/_style.sass */
+      body .mid .login .bottom a, body .mid .register .bottom a {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+        font-size: 0.9em;
+        color: #fff;
+        text-decoration: none; }
+
+@media (max-width: 600px) {
+  /* line 85, C:/dev/facebook/css/_style.sass */
+  body .mid {
+    padding: 2.5em; }
+    /* line 87, C:/dev/facebook/css/_style.sass */
+    body .mid h1.facebook {
+      font-size: 5em; } }
+
+@media (max-height: 750px) {
+  /* line 92, C:/dev/facebook/css/_style.sass */
+  body .mid h1.facebook {
+    margin: 0; }
+  /* line 95, C:/dev/facebook/css/_style.sass */
+  body .mid .login form, body .mid .register form {
+    box-sizing: border-box;
+    padding-bottom: 10vh;
+    margin: 3em; } }
 
 /*# sourceMappingURL=main.css.map */
